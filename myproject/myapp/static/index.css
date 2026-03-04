@@ -1,0 +1,11 @@
+div {
+  background-color: peachpuff;
+  height: 150px;
+  width: 200px;
+  padding: 1rem;
+  border: 1px solid black;
+  margin: 2px;
+}
+h2 {
+  color: red;
+}
