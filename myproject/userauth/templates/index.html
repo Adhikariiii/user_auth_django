@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    {% if user.is_authenticated%}
+
+    <h2>Welcome to the Home Page, {{user.username}}</h2>
+
+    {% else %}
+    <h2>Welcome to the Home Page</h2>
+    {% endif %} {% for feature in features%}
+    <div class="database">
+      <h3>{{feature.name}}</h3>
+      <p>{{feature.details}}</p>
+    </div>
+    {% endfor %}
+    <button class="logout-btn">
+      <a href="logout">Logout</a>
+    </button>
+  </body>
+</html>

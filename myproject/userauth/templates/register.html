@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'register.css' %}" />
+    <title>Register your account</title>
+  </head>
+  <body>
+    {% for message in messages%}
+    <h4>{{message}}</h4>
+    {% endfor %}
+    <h1>Please, fill up the below details</h1>
+
+    <form action="{% url 'register' %}" method="POST">
+      {% csrf_token %}
+      <p>Username:</p>
+      <input type="text" name="username" value="puzzle" required />
+      <p>Email:</p>
+      <input type="email" name="email" value="puzzle@gmail.com" required />
+      <p>Password:</p>
+      <input type="password" name="password" required />
+      <p>Repeat Password:</p>
+      <input type="password" name="password2" required />
+      <br /><br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
